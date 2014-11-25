@@ -1,9 +1,13 @@
-Paper Rock Scissors built in Javascript
+Paper Rock Scissors Lizard Spock built in Javascript
 =======================================
 
 ## Overview
 
-Write up of Rock Paper Scissors in Javascript.
+Write up of Rock Paper Scissors Lizard Spock in Javascript.
+
+## Rules
+
+Coming soon!
 
 ## Tech
 

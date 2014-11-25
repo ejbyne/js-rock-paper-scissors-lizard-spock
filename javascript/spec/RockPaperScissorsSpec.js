@@ -21,12 +21,28 @@ describe("RockPaperScissors", function() {
 
       });
 
+      it('should beat lizard', function() {
+
+        player1.picks('rock');
+        player2.picks('lizard');
+        expect(game.winner()).toBe(player1);
+
+      });
+
       it('should lose to paper', function() {
 
         player1.picks('rock');
         player2.picks('paper');
         expect(game.winner()).toBe(player2);
 
+      });
+
+      it('should lose to spock', function() {
+
+        player1.picks('rock');
+        player2.picks('spock');
+        expect(game.winner()).toBe(player2);
+        
       });
 
     });
@@ -79,13 +95,13 @@ describe("RockPaperScissors", function() {
 
       it('should result in no winner', function() {
 
-        var drawGameResults = ['rock', 'paper', 'scissors'].map(function(x) {
+        var drawGameResults = ['rock', 'paper', 'scissors', 'lizard', 'spock'].map(function(x) {
           player1.picks(x);
           player2.picks(x);
           return game.winner();
         });
 
-        expect(drawGameResults).toEqual([null, null, null]);
+        expect(drawGameResults).toEqual([null, null, null, null, null]);
 
       });
 
