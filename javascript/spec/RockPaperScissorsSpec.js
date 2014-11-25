@@ -3,8 +3,8 @@ describe("RockPaperScissors", function() {
   
   beforeEach(function() {
 
-    player1 = new Player('Sam');
-    player2 = new Player('Tony');
+    player1 = new Player('Chris');
+    player2 = new Player('Ed');
     game = new Game(player1, player2);
 
   });
@@ -207,6 +207,29 @@ describe("RockPaperScissors", function() {
         expect(drawGameResults).toEqual([null, null, null, null, null]);
 
       });
+
+    });
+
+  });
+
+  describe('loser', function() {
+
+    it('should know the loser', function() {
+      player1.picks('scissors');
+      player2.picks('paper');
+      expect(game.loser()).toBe(player2);
+
+    });
+
+  });
+
+  describe('victory messages', function() {
+
+    it('should display a message when a player wins', function() {
+
+      player1.picks('rock');
+      player2.picks('scissors');
+      expect(game.victoryMessage()).toEqual("Chris's rock crushes Ed's scissors");
 
     });
 

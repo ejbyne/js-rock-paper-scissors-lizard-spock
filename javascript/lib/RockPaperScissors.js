@@ -25,3 +25,20 @@ Game.prototype.winner = function() {
   return this.player2
 };
 
+Game.prototype.loser = function() {
+  if (this.winner() === this.player1) return this.player2
+  else return this.player1
+};
+
+Game.prototype.VERBS = {
+  rock: { lizard: 'crushes', scissors: 'crushes' },
+  paper: { rock: 'covers', spock: 'disproves' },
+  scissors: { paper: 'cuts', lizard: 'decapitates' },
+  lizard: { spock: 'poisons', paper: 'eats' },
+  spock: { scissors: 'smashes', rock: 'vapourises' }
+};
+
+Game.prototype.victoryMessage = function() {
+  var verb = this.VERBS[this.winner().pick][this.loser().pick]
+  return (this.winner().name + "'s " + this.winner().pick + " " + verb + " " + this.loser().name + "'s " + this.loser().pick);
+};
