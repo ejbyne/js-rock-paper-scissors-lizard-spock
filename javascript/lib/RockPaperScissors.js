@@ -11,13 +11,20 @@ Player.prototype.picks = function(pick) {
   this.pick = pick
 };
 
-Game.prototype.winner = function() {
-  var pairs = {
-    'rock': 'scissors',
-    'paper': 'rock',
-    'scissors': 'paper'
-  };
-  if (this.player1.pick === this.player2.pick) return null;
-  if (pairs[this.player1.pick] === this.player2.pick) return this.player1;
-  else return this.player2;
+Game.prototype.PAIRS = {
+  rock: ['scissors', 'lizard'],
+  paper: ['rock', 'spock'],
+  scissors: ['paper', 'lizard'],
+  lizard: ['spock', 'paper'],
+  spock: ['scissors', 'rock']
 };
+
+Game.prototype.winner = function() {
+  if (this.player1.pick === this.player2.pick) return null;
+  if (this.PAIRS[this.player1.pick].indexOf(this.player2.pick) > -1 ) return this.player1 
+  return this.player2
+};
+
+
+
+
