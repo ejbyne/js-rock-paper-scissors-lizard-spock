@@ -6,6 +6,7 @@ describe("RockPaperScissors", function() {
     player1 = new Player('Chris');
     player2 = new Player('Ed');
     game = new Game(player1, player2);
+    autoplayer = new AutoPlayer();
 
   });
 
@@ -233,6 +234,18 @@ describe("RockPaperScissors", function() {
 
     });
 
+  });
+
+  describe('autoplayer output', function() {
+
+    it('should be one of the five options', function() {
+  
+      var autoPlayerPick = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
+      autoplayer.picks();
+      expect(autoPlayerPick.indexOf(autoplayer.pick)).not.toBe(-1);
+    
+    });
+  
   });
 
 });

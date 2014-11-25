@@ -7,8 +7,15 @@ function Game(player1, player2) {
   this.player2 = player2;
 };
 
+function AutoPlayer() {};
+
 Player.prototype.picks = function(pick) {
   this.pick = pick
+};
+
+AutoPlayer.prototype.picks = function() {
+  var choices = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
+  this.pick = choices[Math.floor(choices.length * Math.random())];
 };
 
 Game.prototype.PAIRS = {
