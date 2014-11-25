@@ -155,29 +155,6 @@ describe("RockPaperScissors", function() {
 
     });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     describe('spock', function() {
 
       it('should beat scissors', function() {
@@ -214,9 +191,6 @@ describe("RockPaperScissors", function() {
     });
 
   });
-
-
-
 
   describe('draws', function() {
 
