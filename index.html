@@ -18,7 +18,7 @@
       opacity: 1;
     }
     h2, h3 {
-      text-transform: capitalize;
+      /*text-transform: capitalize;*/
     }
     #results {
       list-style: none;
@@ -51,7 +51,14 @@
     <script src='lib/jquery-2.1.1.min.js'></script>
     <script>
       $(document).ready(function(){
-        $('#results').html('Hello World');
+        var ed = new Player('Ed');
+        var chris = new Player('Chris');
+        var game = new Game(ed, chris);
+        $('.choices img').on('click', function(){
+          ed.picks('paper');
+          chris.picks('rock');
+          $('#results').html(game.victoryMessage());
+        });
       })
     </script>
   </body>
