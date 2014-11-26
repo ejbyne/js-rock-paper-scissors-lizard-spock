@@ -44,7 +44,7 @@
       <img src="images/lizard.png" data-pick='lizard'>
       <img src="images/spock.png" data-pick='spock'>
     </div>
-    <h2 id="results"></h2>
+    <ul id="results"></ul>
 
     <script src='lib/Player.js'></script>
     <script src='lib/Game.js'></script>
@@ -52,13 +52,13 @@
     <script src='lib/jquery-2.1.1.min.js'></script>
     <script>
       $(document).ready(function(){
-        var ed = new Player('Ed');
+        var computer = new AutoPlayer('Computer');
         var chris = new Player('Chris');
-        var game = new Game(ed, chris);
+        var game = new Game(computer, chris);
         $('.choices img').on('click', function(){
           chris.picks($(this).data('pick'));
-          ed.picks('rock');
-          $('#results').html(game.victoryMessage());
+          computer.picks();
+          $('#results').prepend('<li>' + game.victoryMessage() + '</li>');
         });
       })
     </script>
