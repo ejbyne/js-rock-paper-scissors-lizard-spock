@@ -31,6 +31,7 @@
       padding: 5px;
       width: 80%;
       margin-bottom: 10px;
+      display: none;
     }
 
     </style>
@@ -58,7 +59,10 @@
         $('.choices img').on('click', function(){
           chris.picks($(this).data('pick'));
           computer.picks();
-          $('#results').prepend('<li>' + game.victoryMessage() + '</li>');
+          $('<li>' + game.victoryMessage() + '</li>').prependTo('#results').slideDown();
+          $('li:nth-child(5)').fadeOut(3000, function(){
+            $(this).remove();
+          });
         });
       })
     </script>
