@@ -57,13 +57,15 @@
         var human = new Player('Chris');
         var game = new Game(computer, human);
         $('.choices img').on('click', function(){
-          var history = $.map($('#results').children(), function(li) {
-            return $(li).data('human-pick');
-          });
-          console.log(history);
           var picked = $(this).data('pick');
+          // var history = $.map($('#results').children(), function(li) {
+          //   return $(li).data('human-pick');
+          // });
+          // console.log(history);
           human.picks(picked);
-          computer.picks(history);
+          computer.picks();
+          // var ai_choice = computer.choose();
+          // computer.picks(ai_choice);
           $('<li data-human-pick="' + picked + '">' + game.victoryMessage() + '</li>').prependTo('#results').slideDown();
           $('li:nth-child(5)').fadeOut(3000, function(){
             $(this).remove();
