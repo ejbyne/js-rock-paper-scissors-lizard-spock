@@ -19,16 +19,16 @@ AutoPlayer.prototype.picks = function() {
 };
 
 Game.prototype.PAIRS = {
-  rock: ['scissors', 'lizard'],
-  paper: ['rock', 'spock'],
-  scissors: ['paper', 'lizard'],
-  lizard: ['spock', 'paper'],
-  spock: ['scissors', 'rock']
+  rock: { lizard: 'crushes', scissors: 'crushes' },
+  paper: { rock: 'covers', spock: 'disproves' },
+  scissors: { paper: 'cuts', lizard: 'decapitates' },
+  lizard: { spock: 'poisons', paper: 'eats' },
+  spock: { scissors: 'smashes', rock: 'vapourises' }
 };
 
 Game.prototype.winner = function() {
   if (this.player1.pick === this.player2.pick) return null;
-  if (this.PAIRS[this.player1.pick].indexOf(this.player2.pick) > -1 ) return this.player1 
+  if (this.PAIRS[this.player1.pick][this.player2.pick]) return this.player1 
   return this.player2
 };
 
@@ -37,15 +37,8 @@ Game.prototype.loser = function() {
   else return this.player1
 };
 
-Game.prototype.VERBS = {
-  rock: { lizard: 'crushes', scissors: 'crushes' },
-  paper: { rock: 'covers', spock: 'disproves' },
-  scissors: { paper: 'cuts', lizard: 'decapitates' },
-  lizard: { spock: 'poisons', paper: 'eats' },
-  spock: { scissors: 'smashes', rock: 'vapourises' }
-};
 
 Game.prototype.victoryMessage = function() {
-  var verb = this.VERBS[this.winner().pick][this.loser().pick]
+  var verb = this.PAIRS[this.winner().pick][this.loser().pick]
   return (this.winner().name + "'s " + this.winner().pick + " " + verb + " " + this.loser().name + "'s " + this.loser().pick);
 };
