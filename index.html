@@ -7,30 +7,43 @@
   </head>
   <body>
     <h3 id="welcome"></h3>
-    
     <article>
       <div class='choices'>
-        <a href="#" data-pick='rock'>Rock</a>
-        <a href="#" data-pick='paper'>Paper</a>
-        <a href="#" data-pick='scissors'>Scissors</a>
-        <a href="#" data-pick='lizard'>Lizard</a>
-        <a href="#" data-pick='spock'>Spock</a>
+        <div class='pick'>
+          <a href="#" data-pick='rock'>Rock</a>
+        </div>
+        <div class='pick'>
+          <a href="#" data-pick='paper'>Paper</a>
+        </div>
+        <div class='pick'>
+          <a href="#" data-pick='scissors'>Scissors</a>
+        </div>
+        <div class='pick'>
+          <a href="#" data-pick='lizard'>Lizard</a>
+        </div>
+        <div class='pick'>
+          <a href="#" data-pick='spock'>Spock</a>
+        </div>
       </div>
     </article>
-
+    <section>
     <ul id="results"></ul>
+    </section>
 
     <script src='lib/Player.js'></script>
     <script src='lib/Game.js'></script>
     <script src='lib/AutoPlayer.js'></script>
     <script src='lib/jquery-2.1.1.min.js'></script>
+    <script src="lib/jquery-ui.min.js"></script>
     <script>
       $(document).ready(function(){
         var computer = new AutoPlayer('Computer');
         var human = new Player('Chris');
         var game = new Game(computer, human);
+        $('article').animate({top: '+=280px'}, 1500);
         $('#welcome').html('You are ' + human.name);
         $('.choices a').on('click', function(){
+          $(this).effect("bounce", {times: 5}, 1000);
           var picked = $(this).data('pick');
           // var history = $.map($('#results').children(), function(li) {
           //   return $(li).data('human-pick');
@@ -41,7 +54,7 @@
           // var ai_choice = computer.choose();
           // computer.picks(ai_choice);
           $('<li data-human-pick="' + picked + '">' + game.victoryMessage() + '</li>').prependTo('#results').slideDown();
-          $('li:nth-child(5)').fadeOut(3000, function(){
+          $('li:nth-child(5)').fadeOut(2000, function(){
             $(this).remove();
           });
         });
