@@ -7,7 +7,6 @@
       font-family: 'Helvetica Neue';
       margin: 15px 0 0 30px;
     }
-
     .choices img {
       width: 15%;
       margin-right: 2.5%;
@@ -15,19 +14,15 @@
       opacity: 0.5;
       transition: 1s all ease;
     }
-
     .choices img:hover {
       opacity: 1;
     }
-
     h2, h3 {
       text-transform: capitalize;
     }
-
     #results {
       list-style: none;
     }
-
     #results li {
       background: #999;
       color: #fff;
@@ -48,24 +43,15 @@
       <img src="images/lizard.png">
       <img src="images/spock.png">
     </div>
-    <ul id="results">
-    </ul>
+    <h2 id="results"></h2>
 
     <script src='lib/Player.js'></script>
     <script src='lib/Game.js'></script>
-    <script src='http://code.jquery.com/jquery-2.1.1.min.js'></script>
+    <script src='lib/AutoPlayer.js'></script>
+    <script src='lib/jquery-2.1.1.min.js'></script>
     <script>
       $(document).ready(function(){
-        var alex = new Player('Alex');
-        var tony = new Player('Tony');
-        var game = new Game(alex, tony)
-
-        $('.choices img').on('click', function(){
-          alex.picks($(this).data('pick'));
-          tony.picks('rock');
-
-          $('#results').prepend('<li>' + game.winningMessage() + '</li>');
-        })
+        $('#results').html('Hello World');
       })
     </script>
   </body>
