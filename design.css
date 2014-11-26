@@ -1,0 +1,60 @@
+body {
+background-color: #FF4A4A;
+font-family: 'Helvetica Neue';
+text-align: center;
+
+}
+
+h1 {
+  font-family: 'Gill Sans';
+  font-size: 25;
+  font-weight: 100;
+  color: #FFFFFF;
+}
+
+.choices a {
+  margin-left: 50px;
+  font-family: 'Gill Sans';
+  font-size: 30;
+  font-weight: 100;
+  color: #FFE6E6;
+  text-decoration: none;
+}
+
+article {
+  width: 700px;
+  margin-top: 250px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.choices h1:hover {
+  opacity: 1;
+
+}
+
+h3 {
+
+}
+
+#welcome  {
+  text-align: right;
+  font-family: 'Gill Sans';
+  font-size: 15;
+  font-weight: 100;
+  color: #D6D6D6;
+}
+
+#results  {
+  list-style: none;
+}
+
+#results li  {
+  padding: 5px;
+  font-weight: 100;
+  font-family: 'Gill Sans';
+  margin-bottom: 10px;
+  font-size: 20px;
+  display: none;
+  color: #FFBABA;
+}
