@@ -1,77 +1,60 @@
 body {
-background-color: #FF4A4A;
-font-family: 'Helvetica Neue';
-text-align: center;
+
+  background-color: #FF4A4A;
+  font-family: 'Helvetica Neue';
+  text-align: center;
+  min-width: 780px;
 }
 
-h1 {
-  font-family: 'Gill Sans';
-  font-size: 25;
-  font-weight: 100;
-  color: #FFFFFF;
-}
+  header  {
+    text-align: right;
+    font-family: 'Helvetica Neue';
+    font-size: 14;
+    font-weight: 200;
+    color: #D6D6D6;
+  }
+  
+  article {
+    width: 700px;
+    margin-left: -350px;
+    left: 50%;
+    top: -40px;
+    position: absolute;
+  }
 
-.choices {
-  margin-left: -70px;
-  display: inline-block;
-}
+    #choices a {
+      margin-left: 25px;
+      margin-right: 25px;
+      font-family: 'Gill Sans';
+      font-size: 30;
+      font-weight: 100;
+      color: #FFE6E6;
+      text-decoration: none;
+    }
 
-.choices a {
-  margin-left: 50px;
-  font-family: 'Gill Sans';
-  font-size: 30;
-  font-weight: 100;
-  color: #FFE6E6;
-  text-decoration: none;
-  padding: 5px;
-}
+    .pick {
+      display: inline-block;
+    }
 
-article {
-  width: 700px;
-  top: -40px;
-/*  margin-left: auto;
-  margin-right: auto;*/
-  left: 50%;
-  margin-left: -350px;
-  padding: 0px;
-  position: absolute;
-}
+  section {
+    position: absolute;
+    width: 700px;
+    height: 400px;
+    top: 350px;
+    left: 50%;
+    margin-left: -350px;
+  }
+    #results  {
+      list-style: none;
+    }
 
-.pick {
-  display: inline-block;
-}
+    #results li  {
+      padding: 5px;
+      font-weight: 100;
+      font-family: 'Gill Sans';
+      margin-bottom: 10px;
+      font-size: 20px;
+      display: none;
+      color: #FFBABA;
+    }
 
-.choices a:hover {
-  opacity: 1;
-}
-
-#welcome  {
-  text-align: right;
-  font-family: 'Gill Sans';
-  font-size: 15;
-  font-weight: 100;
-  color: #D6D6D6;
-}
-
-section {
-  position: absolute;
-  width: 700px;
-  height: 400px;
-  top: 300px;
-  left: 50%;
-  margin-left: -350px;
-}
-
-#results  {
-  list-style: none;
-}
-
-#results li  {
-  padding: 5px;
-  font-weight: 100;
-  font-family: 'Gill Sans';
-  margin-bottom: 10px;
-  font-size: 20px;
-  display: none;
-  color: #FFBABA;
-}
