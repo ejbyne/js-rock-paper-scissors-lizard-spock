@@ -1,5 +1,5 @@
 require 'sinatra'
 
-get '/'
+get '/' do
   erb :index
 end

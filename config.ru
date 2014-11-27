@@ -1,3 +1,3 @@
-require_relative './javascript/app'
+require_relative 'app'
 
 run Sinatra::Application
