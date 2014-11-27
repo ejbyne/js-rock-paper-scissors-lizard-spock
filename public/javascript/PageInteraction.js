@@ -1,9 +1,37 @@
 $(document).ready(function(){
 
+//This is the function that closes the pop-up
+
+//This is the function that starts the pop-up
+
+//Sets the buttons to trigger the blackout on clicks
+// $(document).ready(function(){
+// // $("#btn1").click(strtBlackout); // open if btn is pressed
+// // $(".blackout").click(endBlackout); // close if click outside of popup
+// $(".closeBox").click(endBlackout); // close if close btn clicked
+
+// // Automatically trigger the pop-up after 10 seconds
+// // setTimeout( strtBlackout, 0);
+// })
+
+  var startBlackout = function strtBlackout(){
+  $(".msgbox").css("display", "block");
+  $(".blackout").css("display", "block");
+  setTimeout(strtBlackout, 500);
+  };
+
+  var endBlackout = function endBlackout(){
+  $(".blackout").css("display", "none");
+  $(".msgbox").css("display", "none");
+  // setTimeout(strtBlackout, 500);
+  };
+
   var startGame = function(){
+    startBlackout();
+    lowerFromTop();
     $('#start').click(function() {
+      endBlackout();
       enterName();
-      lowerFromTop();
       welcomeMessage();
     });
   };
@@ -60,6 +88,7 @@ $(document).ready(function(){
   var human = new Player();
   var computer = new AutoPlayer('Computer');
   var game = new Game(computer, human);
+
 
   startGame();
   makePicks();
