@@ -7,51 +7,50 @@
   </head>
 
   <body>
-      <header id="welcome"></header>
+    <header id="welcome"></header>
 
-<div class="blackout">
-</div>
+    <div class="blackout">
+    </div>
     <div class="msgbox">
-        <form>
-            <input type="text" id="text" name="name" placeholder="Please enter your name">
-            <input type="submit" id="start" value="Start" class="closeBox">
+      <form>
+        <input type="text" id="text" name="name" placeholder="Please enter your name" autocomplete="off">
+        <input type="submit" id="start" value="Start">
       </form>
     </div>
-
       
-      <article id="choices">
-          <div class='pick'>
-            <a href="#" data-pick='rock'>Rock</a>
-          </div>
-          <div class='pick'>
-            <a href="#" data-pick='paper'>Paper</a>
-          </div>
-          <div class='pick'>
-            <a href="#" data-pick='scissors'>Scissors</a>
-          </div>
-          <div class='pick'>
-            <a href="#" data-pick='lizard'>Lizard</a>
-          </div>
-          <div class='pick'>
-            <a href="#" data-pick='spock'>Spock</a>
-          </div>
-      </article>
+    <article id="choices">
+      <div class='pick'>
+        <a href="#" data-pick='rock'>Rock</a>
+      </div>
+      <div class='pick'>
+        <a href="#" data-pick='paper'>Paper</a>
+      </div>
+      <div class='pick'>
+        <a href="#" data-pick='scissors'>Scissors</a>
+      </div>
+      <div class='pick'>
+        <a href="#" data-pick='lizard'>Lizard</a>
+      </div>
+      <div class='pick'>
+        <a href="#" data-pick='spock'>Spock</a>
+      </div>
+    </article>
 
-      <section>
-        <ul id="results"></ul>
-      </section>
+    <section>
+      <ul id="results"></ul>
+    </section>
 
-      <template id='list-item-template'>
-        <li>{{ message }}</li>
-      </template>
+    <template id='list-item-template'>
+      <li>{{ message }}</li>
+    </template>
 
-      <script src='javascript/Player.js'></script>
-      <script src='javascript/Game.js'></script>
-      <script src='javascript/AutoPlayer.js'></script>
-      <script src='javascript/jquery-2.1.1.min.js'></script>
-      <script src='javascript/jquery-ui.min.js'></script>
-      <script src='https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.min.js'></script>
-      <script src='javascript/PageInteraction.js'></script>
+    <script src='javascript/Player.js'></script>
+    <script src='javascript/Game.js'></script>
+    <script src='javascript/AutoPlayer.js'></script>
+    <script src='javascript/jquery-2.1.1.min.js'></script>
+    <script src='javascript/jquery-ui.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.min.js'></script>
+    <script src='javascript/PageInteraction.js'></script>
 
   </body>
 

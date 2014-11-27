@@ -23,9 +23,23 @@ Game.prototype.loser = function() {
   else return this.player1
 };
 
-
 Game.prototype.victoryMessage = function() {
   if (this.player1.pick === this.player2.pick) return "Draw";
   var verb = this.PAIRS[this.winner().pick][this.loser().pick]
-  return (this.winner().name + "'s " + this.winner().pick + " " + verb + " " + this.loser().name + "'s " + this.loser().pick);
+  return (this.winner().name + "'s " + this.winner().pick
+    + " " + verb + " " 
+    + this.loser().name + "'s " + this.loser().pick);
+};
+
+Game.prototype.scores = {
+  player1: 0,
+  player2: 0
+}
+
+Game.prototype.updateScores = function() {
+  if (this.winner() === this.player1) {
+    this.scores['player1'] = (this.scores['player1'] + 1)
+  } else {
+    this.scores['player2'] = (this.scores['player2'] + 1)
+  };
 };
