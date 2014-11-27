@@ -15,15 +15,17 @@ $(document).ready(function(){
 // })
 
   var startBlackout = function strtBlackout(){
-  $(".msgbox").css("display", "block");
-  $(".blackout").css("display", "block");
-  setTimeout(strtBlackout, 500);
+  $(".msgbox").fadeIn(3000);
+  $(".blackout").fadeIn(3000);
+  // setTimeout(strtBlackout, 500);
   };
 
   var endBlackout = function endBlackout(){
-  $(".blackout").css("display", "none");
-  $(".msgbox").css("display", "none");
-  // setTimeout(strtBlackout, 500);
+    // $(".blackout").css("display", "none");
+    // $(".msgbox").css("display", "none");
+    $(".blackout").fadeOut(1500);
+    $(".msgbox").toggle("puff");
+    // setTimeout(strtBlackout, 500);
   };
 
   var startGame = function(){
@@ -43,7 +45,7 @@ $(document).ready(function(){
   };
 
   var lowerFromTop = function(){
-    $('article').animate({top: '+=350px'}, 1500);
+    $('article').animate({top: '+=350px'}, 2000);
   };
 
   var welcomeMessage = function(){
