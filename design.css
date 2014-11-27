@@ -2,6 +2,7 @@ body {
   background-color: #FF4A4A;
   font-family: 'Helvetica Neue';
   text-align: center;
+  min-width: 780px;
 }
 
   header  {
@@ -14,31 +15,44 @@ body {
   
   article {
     width: 700px;
-    margin-top: 250px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: -350px;
+    left: 50%;
+    top: -40px;
+    position: absolute;
   }
 
-  #choices a {
-    margin-left: 25px;
-    margin-right: 25px;
-    font-family: 'Gill Sans';
-    font-size: 30;
-    font-weight: 100;
-    color: #FFE6E6;
-    text-decoration: none;
-  }
+    #choices a {
+      margin-left: 25px;
+      margin-right: 25px;
+      font-family: 'Gill Sans';
+      font-size: 30;
+      font-weight: 100;
+      color: #FFE6E6;
+      text-decoration: none;
+    }
 
-  #results  {
-    list-style: none;
-  }
+    .pick {
+      display: inline-block;
+    }
 
-  #results li  {
-    padding: 5px;
-    font-weight: 100;
-    font-family: 'Gill Sans';
-    margin-bottom: 10px;
-    font-size: 20px;
-    display: none;
-    color: #FFBABA;
+  section {
+    position: absolute;
+    width: 700px;
+    height: 400px;
+    top: 350px;
+    left: 50%;
+    margin-left: -350px;
   }
+    #results  {
+      list-style: none;
+    }
+
+    #results li  {
+      padding: 5px;
+      font-weight: 100;
+      font-family: 'Gill Sans';
+      margin-bottom: 10px;
+      font-size: 20px;
+      display: none;
+      color: #FFBABA;
+    }
