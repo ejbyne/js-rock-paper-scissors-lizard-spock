@@ -29,11 +29,20 @@ body {
       font-weight: 100;
       color: #FFE6E6;
       text-decoration: none;
+      opacity: 0.8;
     }
 
-    .pick {
-      display: inline-block;
-    }
+      #choices a:hover {
+        opacity: 1;
+      }
+
+      #choices a:focus {
+        outline:0;
+      }
+
+      .pick {
+        display: inline-block;
+      }
 
   section {
     position: absolute;
