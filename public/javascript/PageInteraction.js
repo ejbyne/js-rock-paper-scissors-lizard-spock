@@ -22,12 +22,12 @@ $(document).ready(function(){
     });
   };
 
-  function strtBlackout(){
+  var strtBlackout = function(){
     $(".msgbox").fadeIn(3000);
     $(".blackout").fadeIn(3000);
   };
 
-  function endBlackout(){
+  var endBlackout = function(){
     $(".blackout").fadeOut(1500);
     $(".msgbox").toggle("puff");
   };
@@ -39,11 +39,12 @@ $(document).ready(function(){
   var enterName = function(){
     event.preventDefault();
     var name = $('#text').val();
-    human.setName(name)
+    human.setName(name);
   };
 
-  var welcomeMessage = function(){
-    $('#welcome').html('You are ' + human.name);
+  var scoreMessage = function(){
+    $('#welcome').html(human.name + "'s score: " + game.scores['player1']
+      + "<br>" + computer.name + "'s score: " + game.scores['player2']);
   };
 
   var bounce = function(item){
@@ -64,10 +65,7 @@ $(document).ready(function(){
 
   var printScores = function() {
     game.updateScores();
-    console.log(game.scores['player1']);
-    console.log(game.scores['player2']);
-    // $('#results').prepend(human.name + ': ' + game.scores[player1]);
-    // $('#results').prepend(computer.name + ': ' + game.scores[player2]);
+    scoreMessage();
   };
 
   var render = function(game){
