@@ -6,15 +6,18 @@ $(document).ready(function(){
   };
 
   var startGame = function(){
-    $('#start').click(function() {
+    $('#start').on('click', function(event){
+      event.preventDefault();
       endBlackout();
       enterName();
       scoreMessage(game, human, computer);
+      return false
     });
   };
 
   var makePicks = function(){
     $('#choices a').on('click', function(event){
+      event.preventDefault();
       bounce(this);
       recordPicks(this);
       printResults();
@@ -37,13 +40,11 @@ $(document).ready(function(){
   };
 
   var enterName = function(){
-    event.preventDefault();
     var name = $('#text').val();
     human.setName(name);
   };
 
   var bounce = function(item){
-    event.preventDefault();
     $(item).effect("bounce", {times: 5}, 1000);
   };
 
