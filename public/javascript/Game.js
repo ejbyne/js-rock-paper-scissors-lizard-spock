@@ -37,7 +37,9 @@ Game.prototype.scores = {
 }
 
 Game.prototype.updateScores = function() {
-  if (this.winner() === this.player1) {
+  if (this.winner() === null) {
+    return null;
+  } else if (this.winner() === this.player1) {
     this.scores['player1'] = (this.scores['player1'] + 1)
   } else {
     this.scores['player2'] = (this.scores['player2'] + 1)

@@ -9,7 +9,7 @@ $(document).ready(function(){
     $('#start').click(function() {
       endBlackout();
       enterName();
-      welcomeMessage();
+      scoreMessage(game, human, computer);
     });
   };
 
@@ -42,11 +42,6 @@ $(document).ready(function(){
     human.setName(name);
   };
 
-  var scoreMessage = function(){
-    $('#welcome').html(human.name + "'s score: " + game.scores['player1']
-      + "<br>" + computer.name + "'s score: " + game.scores['player2']);
-  };
-
   var bounce = function(item){
     event.preventDefault();
     $(item).effect("bounce", {times: 5}, 1000);
@@ -59,20 +54,31 @@ $(document).ready(function(){
   };
   
   var printResults = function() {
-    $(render(game)).prependTo('#results').slideDown();
+    $(render_result(game)).prependTo('#results').slideDown();
     $('li:nth-child(5)').fadeOut(3000, remove);    
   };
 
   var printScores = function() {
     game.updateScores();
-    scoreMessage();
+    scoreMessage(game, human, computer);
   };
 
-  var render = function(game){
+  var scoreMessage = function(game, human, computer){
+    $('#scorecard').html(render_score(game, human, computer));
+  };
+
+  var render_result = function(game){
     var html = $('#list-item-template').html();
     var data = {message: game.victoryMessage()};
     return Mustache.render(html, data);
   };
+
+  var render_score = function(game, human, computer){
+    var html = $('#scorecard-template').html();
+    var data = {human_score: (human.name + "'s score: " + game.scores['player1']),
+      computer_score: (computer.name + "'s score: " + game.scores['player2'])}
+    return Mustache.render(html, data);
+  }
 
   var remove = function(){
     $(this).remove();
@@ -80,7 +86,7 @@ $(document).ready(function(){
   
   var human = new Player();
   var computer = new AutoPlayer('Computer');
-  var game = new Game(computer, human);
+  var game = new Game(human, computer);
 
   loadGame();
   startGame();

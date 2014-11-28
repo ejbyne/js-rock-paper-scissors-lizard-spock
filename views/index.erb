@@ -7,7 +7,8 @@
   </head>
 
   <body>
-    <header id="welcome"></header>
+    
+    <header id="scorecard"></header>
 
     <div class="blackout">
     </div>
@@ -42,6 +43,11 @@
 
     <template id='list-item-template'>
       <li>{{ message }}</li>
+    </template>
+
+    <template id='scorecard-template'>
+      <p>{{ human_score }}</p>
+      <p>{{ computer_score }}</p>
     </template>
 
     <script src='javascript/Player.js'></script>
