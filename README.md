@@ -1,3 +1,5 @@
+[![Code Climate](https://codeclimate.com/github/ejbyne/js-rock-paper-scissors-lizard-spock/badges/gpa.svg)](https://codeclimate.com/github/ejbyne/js-rock-paper-scissors-lizard-spock)
+
 # Rock Paper Scissors Lizard Spock (Javascript)
 
 ## Summary
