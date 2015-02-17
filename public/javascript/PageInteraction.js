@@ -1,21 +1,20 @@
-$(document).ready(function(){
+$(document).ready(function() {
 
-  var loadGame = function(){
+  var loadGame = function() {
     strtBlackout();
     lowerFromTop();
   };
 
-  var startGame = function(){
+  var startGame = function() {
     $('#start').on('click', function(event){
       event.preventDefault();
       endBlackout();
       enterName();
       scoreMessage(game, human, computer);
-      return false
     });
   };
 
-  var makePicks = function(){
+  var makePicks = function() {
     $('#choices a').on('click', function(event){
       event.preventDefault();
       bounce(this);
@@ -55,7 +54,7 @@ $(document).ready(function(){
   };
   
   var printResults = function() {
-    $(render_result(game)).prependTo('#results').slideDown();
+    $(renderResult(game)).prependTo('#results').slideDown();
     $('li:nth-child(5)').fadeOut(3000, remove);    
   };
 
@@ -65,21 +64,21 @@ $(document).ready(function(){
   };
 
   var scoreMessage = function(game, human, computer){
-    $('#scorecard').html(render_score(game, human, computer));
+    $('#scorecard').html(renderScore(game, human, computer));
   };
 
-  var render_result = function(game){
+  var renderResult = function(game){
     var html = $('#list-item-template').html();
-    var data = {message: game.victoryMessage()};
+    var data = { message: game.victoryMessage() };
     return Mustache.render(html, data);
   };
 
-  var render_score = function(game, human, computer){
+  var renderScore = function(game, human, computer){
     var html = $('#scorecard-template').html();
-    var data = {human_score: (human.name + "'s score: " + game.scores['player1']),
-      computer_score: (computer.name + "'s score: " + game.scores['player2'])}
+    var data = { human_score: (human.name + "'s score: " + game.scores['player1']),
+                 computer_score: (computer.name + "'s score: " + game.scores['player2']) }
     return Mustache.render(html, data);
-  }
+  };
 
   var remove = function(){
     $(this).remove();
@@ -93,4 +92,4 @@ $(document).ready(function(){
   startGame();
   makePicks();
   
-})
+});

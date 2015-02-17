@@ -12,15 +12,15 @@ Game.prototype.PAIRS = {
 };
 
 Game.prototype.winner = function() {
-  if (this.player1.pick === this.player2.pick) return null;
-  if (this.PAIRS[this.player1.pick][this.player2.pick]) return this.player1 
-  return this.player2
+  if (this.player1.pick === this.player2.pick) { return null; }
+  if (this.PAIRS[this.player1.pick][this.player2.pick]) { return this.player1; }
+  return this.player2;
 };
 
 Game.prototype.loser = function() {
-  if (this.player1.pick === this.player2.pick) return null;
-  if (this.winner() === this.player1) return this.player2
-  else return this.player1
+  if (this.winner() === null) { return null; }
+  if (this.winner() === this.player1) { return this.player2; }
+  else { return this.player1; }
 };
 
 Game.prototype.victoryMessage = function() {
