@@ -4,7 +4,7 @@
 
 ## Summary
 
-In Week 5 at Makers Academy we expanded on our initial [Rock Paper Scissors game](https://github.com/ejbyne/js-rock-paper-scissors) by creating the more complicated version "Rock Paper Scissors Lizard Spock". This was an opportunity to start producing more complex JavaScript code, again using an OOD approach and with Jasmine as the testing framework.
+In Week 5 at Makers Academy we expanded on our initial [Rock Paper Scissors](https://github.com/ejbyne/js-rock-paper-scissors) game by creating the more complicated version "Rock Paper Scissors Lizard Spock". This was an opportunity to start producing more complex JavaScript code, again using an OOD approach and with Jasmine as the testing framework.
 
 We also learnt how to use JQuery to create a single-page interactive and animated web application, which was then put on a simple Sinatra server.
 
